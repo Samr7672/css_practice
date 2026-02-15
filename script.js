@@ -1,4 +1,5 @@
-console.log("hello world")
+let humanScore=0;
+let computerScore=0;
 function computerChoice(){
     let computerChoice=Math.floor(Math.random()*3)+1
     
@@ -17,7 +18,7 @@ function computerChoice(){
 console.log(computerChoice());
 
 function humanChoice(){
-   
+
     let humanChoice= prompt("Choose 1 for rock, 2 for paper or 3 for scissors");
     
     if(humanChoice==1){
@@ -33,15 +34,7 @@ function humanChoice(){
 }
 console.log(humanChoice());
 
-function playgame(){
-    let humanScore=0;
-    let computerScore=0;
-    for(let i=0;i<5;i++){
-        const humanSelection=humanChoice();
-        const computerSelection=computerChoice();
-        playRound(humanSelection,computerSelection);
-    } 
-        
+
         
 function playRound(humanChoice,computerChoice){
 
@@ -74,8 +67,15 @@ function playRound(humanChoice,computerChoice){
     }
     console.log("You have "+humanScore+" points");
     console.log("The computer has "+computerScore+" points");
-}}
-const humanSelection=humanChoice();
-const computerSelection=computerChoice();
-playRound(humanSelection,computerSelection);
+}
+function playgame(){
+        for(let i=0;i<5;i++){
+        const humanSelection=humanChoice();
+        const computerSelection=computerChoice();
+        playRound(humanSelection,computerSelection);
+    } 
+
+
+}
+
 
